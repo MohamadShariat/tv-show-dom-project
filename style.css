@@ -1,5 +1,151 @@
+:root {
+  --primary-color: #ffff00;
+  --dark-color: #141414;
+}
+
 * {
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #fff;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+img {
+  width: 100%;
+}
+
+/* Header */
+
+.header {
+  width: 100%;
+  height: 80px;
+}
+
+/* Main */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  background-color: var(--primary-color);
+  max-width: 80%;
+  margin: auto;
+}
+
+.card {
+  width: 300px;
+  height: 450px;
+  background-color: #222;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(4, 4, 5, 1);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(4, 4, 5, 1);
+  box-shadow: 0px 0px 30px 0px rgba(4, 4, 5, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transition: all ease 0.5s;
+  transform: scale(1.05);
+}
+
+.card > img {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card li {
+  text-align: center;
+  padding-top: 16px;
+}
+
+.card li:nth-child(1) {
+  text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+    #ff0000 0px 0px 20px, #ff0000 0px 0px 30px, #ff0000 0px 0px 40px,
+    #ff0000 0px 0px 50px, #ff0000 0px 0px 75px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1.5rem;
+}
+
+.card li:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1rem;
+}
+
+.card p {
+  padding: 16px;
+  text-indent: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: auto;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+.card p::first-letter {
+  font-size: 24px;
+  font-weight: 700;
+  margin-right: 2px;
+  color: yellow;
+  text-shadow: 0 -1px 4px #fff, 0 -2px 10px #ff0, 0 -10px 20px #ff8000,
+    0 -18px 40px #f00, 2px 2px 2px rgba(198, 206, 100, 0);
+}
+
+/* Footer */
+.footer {
+  max-width: 80%;
+  margin: 1rem auto;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.footer,
+.footer a {
+  color: var(--dark-color);
+  font-size: 1.5rem;
+}
+
+.footer p {
+  margin-bottom: 1.5rem;
 }
