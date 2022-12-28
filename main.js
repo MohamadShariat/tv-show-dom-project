@@ -12,7 +12,6 @@ const axiosFunc = async () => {
     response.data.forEach(item => {
       const card = document.createElement('div');
       card.classList.add('card');
-      container.appendChild(card);
       const image = document.createElement('img');
       image.src = item.image.medium;
       card.appendChild(image);
@@ -31,6 +30,10 @@ const axiosFunc = async () => {
       const summary = document.createElement('p');
       summary.innerHTML = `${item.summary.slice(3, -4).slice(0, 100)}...`;
       ul.append(summary);
+      const anchor = document.createElement('a');
+      anchor.href = 'https://www.tvmaze.com/shows/82/game-of-thrones/episodes';
+      anchor.append(card);
+      container.appendChild(anchor);
     });
   } catch (error) {
     console.log(error);
