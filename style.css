@@ -44,7 +44,46 @@ img {
 
 .header {
   width: 100%;
-  height: 80px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgb(25, 187, 19);
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper span {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  background-color: #f00;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.selectInput,
+.searchInput {
+  width: 500px;
+  height: 40px;
+  outline: none;
+  border-radius: 10px;
+  text-indent: 10px;
+  background-color: rgb(104, 224, 13);
+  font-size: 20px;
+  border: none;
 }
 
 /* Main */
@@ -142,4 +181,9 @@ img {
 .footer p {
   color: var(--dark-color);
   font-size: 1.5rem;
+}
+
+/* hidden */
+.hidden {
+  display: none;
 }

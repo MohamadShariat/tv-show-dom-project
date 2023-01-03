@@ -14,7 +14,13 @@
 
 <body>
     <header class="header">
+        <div class="wrapper">
+            <input type="text" class="searchInput" placeholder="Search..." autofocus>
+            <span id="searchNumber">0</span>
         </div>
+        <select name="selectInput" id="selectInput" class="selectInput">
+            <option value="">Select...</option>
+        </select>
     </header>
     <main class="container">
 
@@ -28,7 +34,7 @@
             &copy; <span id="currentYear"></span> TV Show
         </p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
     <script src="./main.js"></script>
 
 </body>
