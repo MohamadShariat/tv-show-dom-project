@@ -32,7 +32,7 @@ searchBar.addEventListener('keyup', e => {
     );
   });
 
-  if (filteredEpisodes.length === []) {
+  if (filteredEpisodes.length === '') {
     filterEpisodeNumber.classList.add('hidden');
   } else {
     filterEpisodeNumber.textContent = filteredEpisodes.length;
@@ -50,7 +50,11 @@ const displayEpisodes = episodes => {
       const episodeNumber =
         Number(episode.number) < 10 ? `0${episode.number}` : episode.number;
       return `
-          <a class="card">
+          <a class="card" href='https://www.tvmaze.com/episodes/${
+            episode.id
+          }/game-of-thrones-${episode.season}x${episodeNumber}-${episode.name
+        .split(' ')
+        .join('-')}' target='_blank'>
               <div>
                  <img src="${episode.image.medium}"></img>
                  <ul>
