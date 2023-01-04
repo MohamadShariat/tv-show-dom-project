@@ -4,6 +4,7 @@ const container = document.querySelector('.container');
 const searchBar = document.querySelector('.searchInput');
 const card = document.querySelectorAll('.card');
 const filterEpisodeNumber = document.querySelector('#searchNumber');
+const selectInput = document.querySelector('#selectInput');
 const gameOfThronesURL = ' https://api.tvmaze.com/shows/82/episodes';
 
 let episodes = [];
@@ -14,6 +15,7 @@ const loadEpisodes = async () => {
     const res = await fetch(gameOfThronesURL);
     episodes = await res.json();
     displayEpisodes(episodes);
+    displayOptions(episodes);
   } catch (err) {
     console.error(err);
   }
@@ -70,6 +72,26 @@ const displayEpisodes = episodes => {
 
 // S01E01 - Winter is Coming
 // make select option
+
+const displayOptions = episodes => {
+  const selection = episodes
+    .map((episode, index) => {
+      const seasonNumber =
+        Number(episode.season) < 10 ? `0${episode.season}` : episode.season;
+      const episodeNumber =
+        Number(episode.number) < 10 ? `0${episode.number}` : episode.number;
+      return `<option value=${index}>S${seasonNumber}E${episodeNumber} - ${episode.name}</option>`;
+    })
+    .join('');
+  selectInput.innerHTML += selection;
+};
+
+selectInput.addEventListener('change', e => {
+  e.preventDefault();
+  const selectItems = Array.from(e.target.children);
+
+  console.log(selectItems);
+});
 
 loadEpisodes();
 
