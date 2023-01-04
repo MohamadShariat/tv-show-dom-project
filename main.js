@@ -8,8 +8,6 @@ const gameOfThronesURL = ' https://api.tvmaze.com/shows/82/episodes';
 
 let episodes = [];
 
-console.log(filterEpisodeNumber);
-
 // load episodes
 const loadEpisodes = async () => {
   try {
@@ -60,9 +58,7 @@ const displayEpisodes = episodes => {
                  <ul>
                    <li>${episode.name}</li>
                    <li> S ${seasonNumber}E${episodeNumber}</li>
-                   <p>House: ${`${episode.summary
-                     .slice(3, -4)
-                     .slice(0, 100)}...`}</p>
+                   <p>${`${episode.summary.slice(3, -4).slice(0, 100)}...`}</p>
                  </ul>
               </div>
           </a>
@@ -71,6 +67,9 @@ const displayEpisodes = episodes => {
     .join('');
   container.innerHTML = htmlString;
 };
+
+// S01E01 - Winter is Coming
+// make select option
 
 loadEpisodes();
 
